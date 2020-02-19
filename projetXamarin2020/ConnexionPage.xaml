@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="projetXamarin2020.ConnexionPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label TextColor="#E00203" Text="{Binding ErrorMessage}"  />
+            <Entry Placeholder="tapez votre login" Text="{Binding Login.Email}"  />
+            <Entry IsPassword="True" Placeholder="tapez votre password" Text="{Binding Login.Password}"  />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Connexion" HorizontalOptions="FillAndExpand" BackgroundColor="#91CA47" Clicked="OnConnexionApi" />
+                <Button Text="Inscription?" HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF" Clicked="OnInscriptionClick"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

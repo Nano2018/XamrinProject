@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             mc:Ignorable="d"
+             x:Class="projetXamarin2020.DetailItem">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding LabelTest}"/>
+            <Label HorizontalOptions="Center" 
+                   TextColor="#0080FF"
+                   Text="{Binding Item.Title}"/>
+            <Image HorizontalOptions="Center"
+                   HeightRequest="200"
+                   Source="{Binding Path=Item.ImageUrl}"/>
+            <Label HorizontalOptions="Center" Text="{Binding Item.Description}" TextColor="#000000" FontSize="Small"/>
+            <maps:Map x:Name="myMap"
+                      MapType="Street"
+                      IsEnabled="True"
+                      HeightRequest="400"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

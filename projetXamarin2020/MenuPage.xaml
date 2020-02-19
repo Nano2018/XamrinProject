@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="projetXamarin2020.MenuPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" 
+                     Clicked="OnItemAdded"
+                     Order="Secondary"
+                     Priority="0"
+                     IconImageSource="buttonPlus.png"/>
+
+        <ToolbarItem Order="Secondary"
+                     Text="Edit Profil"
+                     Priority="1"
+                     Clicked="OnEditProfil" />
+        
+        <ToolbarItem Order="Secondary"
+                     Text="Deconnexion"
+                     Priority="3"
+                     Clicked="OnDeconnexion" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+      <StackLayout>
+            <ListView x:Name="ItemsListPlaceView"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding Refresh, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HeightRequest="100" Padding="10" Orientation="Horizontal">
+                                <Image HorizontalOptions="Start"
+                                       HeightRequest="100"
+                                       WidthRequest="70"
+                                       Margin="2,2,2,2"
+                                       Aspect="AspectFit"
+                                       Source="{Binding Path=ImageUrl}"/>
+                                <StackLayout HeightRequest="100">
+                                    <Label HorizontalOptions="Center" 
+                                           TextColor="#0080FF" 
+                                           Text="{Binding Path=Title}" />
+                                    <Label TextColor="#000000"
+                                           HorizontalOptions="CenterAndExpand"
+                                           Text="{Binding Path=Description}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

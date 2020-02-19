@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="projetXamarin2020.InscriptionPage">
+    <ContentPage.Content>
+      <StackLayout>
+            <Label Text="{Binding LabelError}" TextColor="{StaticResource primaryRed}"/>
+            <Entry Placeholder="Nom" Text="{Binding RequestRegister.FirstName}"/>
+            <Entry Placeholder="Prénom" Text="{Binding RequestRegister.LastName}"/>
+            <Entry  Placeholder="mail@mail.com" Text="{Binding RequestRegister.Email}"/>
+            <Entry Placeholder="*******" IsPassword="true" Text="{Binding RequestRegister.Password}"/>
+            <Entry Placeholder="confirm password" IsPassword="true" Text="{Binding ConfirmPassword}"/>
+            <Button Text="valider" Clicked="OnValidationInscription"/>
+        </StackLayout> 
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="projetXamarin2020.AddItem">
+    <ContentPage.Content>
+      <StackLayout>
+            <Label x:Name="errorLabel" TextColor="#DF0101"/>
+            <Label Text="Titre de la place:" />
+            <Entry Text="{Binding Item.Title}" Placeholder="titre" />
+            <Label Text="Description:" />
+            <Editor Text="{Binding Item.Description}" 
+                    Placeholder="description" Margin="0" 
+                    HeightRequest="200"/>
+            <Button Text="prendre une photo" Clicked="OnTakePhoto"/>
+            <Button Text="sélectionner une image" Clicked="OnPickPhoto"/>
+
+
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
